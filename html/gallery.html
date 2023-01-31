@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling - Vainilla JS</title>
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarala&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+    .column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.bgcolor{
+            background: linear-gradient(0deg, rgba(207,224,255,1) 0%, rgb(28, 5, 34) 100%);
+        }
+</style>
+  
+
+
+</head>
+
+<body class="bgcolor">
+
+    <header id="header">
+        <div class="row  margin1 zoom text" style="font-size:2vw ;"> DEVIKA DIYORA</div>
+        <div class="menu"></div>
+        <nav>
+            <ul class="menulist">
+                <li><a href="/index.html" >HOME</a></li>
+                <li><a href="/html/gallery.html" class="active">GALLERY</a></li>
+                <li><a href="/html/game.html" >GAMES</a></li>
+                <li><a href="/html/blog.html">BLOG</a></li>
+                <li><a href="/html/contactme.html">CONTACT ME</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div style="text-align: center; margin-top: 140px; color: white;">
+        <h1 >Gallery</h1> 
+    </div>
+
+ <div class="row">
+
+<div class="card column">
+  <img src="/Images/art nouveau poster-01.png" alt="Denim Jeans" style="width:250px ; margin-top: 10px;" class="responsive">
+  <h2>Playing-card Poster</h2>
+  <p>Art movement based Posters</p> <br>
+  <p><button><a href="/html/playingcardposter.html">See More</a></button> </p><br>
+</div>
+  
+<div class="card column">
+    <img src="/Images/IA poster3 final final rgb-01.png" alt="Denim Jeans" style="width:250px ; margin-top: 10px;" class="responsive">
+    <h2> Campaign Posters</h2>
+    <p>Social cause campaign Posters</p> <br>
+    <p><button><a href="/html/campaignposter.html">See More</a></button> </p><br>
+  </div>
+
+  <div class="card column">
+    <img src="/Images/newsletter edited-01.jpg" alt="Denim Jeans" style="width:250px ; margin-top: 10px;" class="responsive">
+    <h2> Newsletter</h2>
+    <p>About me Newsletter</p> <br>
+    <p><button><a href="/html/newsletter.html">See More</a></button> </p><br>
+  </div>
+   
+  <div class="card column">
+    <img src="/Images/swimming infographics final-01.png" alt="Denim Jeans" style="width:250px ; margin-top: 10px;" class="responsive">
+    <h2> Infographics</h2>
+    <p>Infographics based on Daily 
+        <br> Routine </p> <br>
+    <p><button><a href="/html/infographics.html">See More</a></button> </p><br>
+  </div>
+
+  <div class="card column">
+    <img src="/Images/vinyl cover.png" alt="Denim Jeans" style="width:250px ; margin-top: 10px;" class="responsive">
+    <h2> Vinyl Cover</h2>
+    <p>Bread Band music album Vinyl cover
+      </p> <br>
+    <p><button><a href="/html/vinylcover.html">See More</a></button> </p><br>
+  </div>
+
+  <div class="card column">
+    <img src="/Images/light elective2-01.png" alt="Denim Jeans" style="width:250px ; margin-top: 10px;" class="responsive">
+    <h2> Photography</h2>
+    <p> Object through Light &
+      <br> Shadow
+         </p> <br>
+    <p><button><a href="/html/photography.html">See More</a></button> </p><br>
+  </div>
+
+
+</div>
+
+    <script>
+        let header = document.getElementById('header')
+        
+        let nube1 = document.getElementById('nube1')
+        let transparente = document.getElementById('transparente')
+        let nube2 = document.getElementById('nube2')
+        let slogan = document.getElementById('slogan')
+        let btn = document.getElementById('btn')
+        let viento = document.getElementById('viento')
+        let persona = document.getElementById('persona')
+        
+        
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            
+            transparente.style.marginLeft =  value * 0.7 + 'px';
+            nube1.style.left = value* -5  + 'px';
+            nube2.style.left = value* -5  + 'px';
+            btn.style.marginTop = value * 0.7 + 'px';
+            slogan.style.marginBottom =   value* -1  + 'px';
+            viento.style.left = value* -5  + 'px';
+            header.style.marginTop = value * 0.4 + 'px';
+            persona.style.marginLeft = value* 4  + 'px';
+        
+        })
+        
+        const navigation = document.querySelector('nav')
+        document.querySelector('.menu').onclick = function (){
+            this.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+            </script>
+
+   
+</body>
+
+</html>

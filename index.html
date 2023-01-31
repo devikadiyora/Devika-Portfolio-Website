@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling - Vainilla JS</title>
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarala&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+  
+
+
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="row  margin1 zoom text" style="font-size:2vw ;"> DEVIKA DIYORA</div>
+        <div class="menu"></div>
+        <nav>
+            <ul class="menulist">
+                <li><a href="/index.html" class="active">HOME</a></li>
+                <li><a href="/html/gallery.html">GALLERY</a></li>
+                <li><a href="/html/game.html">GAME</a></li>
+                <li><a href="/html/blog.html">BLOG</a></li>
+                <li><a href="/html/contactme.html">CONTACT ME</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <img src="/Images/sun edited.png" alt="nube1" id="nube1">
+        <img src="/Images/big stone edited.png" alt="" id="transparente">
+        <img src="/Images/small stone edited.png" alt="nube2" id="nube2">
+        <h2 id="slogan">Communication Designer</h2> 
+        
+        
+        <img src="/Images/background.png" alt="fondo" id="fondo">
+        <img src="/Images/viento.png" alt="viento" id="viento">
+        <img src="/Images/blue stone edited.png" alt="persona" id="persona">
+    </section>
+
+    <div class="row">
+        <div class="sec col-5">
+            <h2>Devika Diyora</h2>
+            <h3>Communication Designer</h3>
+            <!-- <br><img src="../Images/DevikaDiyora_B (self portrait).png" alt="" width="300px" style="margin-left: 700px; margin: 00px;"> -->
+            <p>My name is ​Devika Diyora​. I’m from Surat, Gujarat. I’m currently pursuing Sophomore year of Communication Design (B.Des) from Atlas Skilltech University.
+                <br> I like watching fantasy and sci-fi movies and love to read books of the fiction genre because they give me new perspectives to look at things, the world around me. The hobby has helped me understand the nitty-gritty of the perspective sketches. They have also served as inspirations in my other hobbies.
+                <br> I like to go out and spend time with people close to me. I love to listen to music in my free time. I go to them to blow off some steam. I love to go out in nature and the wilderness - to observe its beauty and experience first-hand how we are part of the bigger ecosystem.
+            </p>
+        </div>
+        
+</div>
+    <script>
+        let header = document.getElementById('header')
+        
+        let nube1 = document.getElementById('nube1')
+        let transparente = document.getElementById('transparente')
+        let nube2 = document.getElementById('nube2')
+        let slogan = document.getElementById('slogan')
+       
+        let viento = document.getElementById('viento')
+        let persona = document.getElementById('persona')
+        
+        
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            
+            transparente.style.marginLeft =  value * 0.7 + 'px';
+            nube1.style.left = value* -5  + 'px';
+            nube2.style.left = value* -5  + 'px';
+           
+            slogan.style.marginBottom =   value* -1  + 'px';
+            viento.style.left = value* -5  + 'px';
+            header.style.marginTop = value * 0.4 + 'px';
+            persona.style.marginLeft = value* 7  + 'px';
+        
+        })
+        
+        const navigation = document.querySelector('nav')
+        document.querySelector('.menu').onclick = function (){
+            this.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+            </script>
+
+   
+</body>
+
+</html>
+

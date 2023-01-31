@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
+    <title>Validation</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="/css/style.css"
+      rel="stylesheet"
+    />
+
+    <style>
+
+.bgcolor{
+        background: linear-gradient(0deg, rgba(207,224,255,1) 0%, rgb(28, 5, 34) 100%);
+    }
+
+        body {
+  font-family: "Lato", sans-serif;
+  color:#ccbdcc;
+  margin: 0;
+}
+
+.contact-banner {
+  background-image: linear-gradient(
+    to right,
+ 
+  );
+  color:#ebf0fc;
+  padding: 40px;
+  margin-top: 100px;
+}
+
+.invalid {
+  border: 1px solid red;
+}
+
+.mb-2 {
+  margin-bottom: 20px;
+}
+
+.mb-4 {
+  margin-bottom: 40px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.contact-description {
+  margin-bottom: 40px;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+  width: 200px;
+  border: 1px solid rgb(0, 114, 66);
+  font-size: 13px;
+  outline: none;
+  color: #333;
+}
+
+.form-control {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.hide {
+  opacity: 0;
+}
+
+textarea {
+  width: 360px;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px;
+  height: 100px;
+  font-size: 14px;
+}
+
+button {
+  color: #ccbdcc;
+  padding: 8px;
+  border-radius: 10px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  color:#1C0522;
+}
+
+button:hover {
+  background-color: #1C0522 ;
+  color: white;
+}
+
+form {
+  padding: 40px;
+}
+
+hr {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: 1px;
+  border: none;
+  background-color: rgb(0, 114, 66);
+}
+    </style>
+  </head>
+
+  <body class="bgcolor">
+
+        <header id="header">
+                <div class="row  margin1 zoom text" style="font-size:2vw ;"> DEVIKA DIYORA</div>
+                <div class="menu"></div>
+                <nav>
+                    <ul class="menulist">
+                        <li><a href="/index.html" >HOME</a></li>
+                        <li><a href="/html/gallery.html">GALLERY</a></li>
+                        <li><a href="/html/game.html" >GAMES</a></li>
+                        <li><a href="/html/blog.html" >BLOG</a></li>
+                        <li><a href="/html/contactme.html" class="active">CONTACT ME</a></li>
+                    </ul>
+                </nav>
+            </header>
+        
+    <div class="contact-banner " style="text-align: center; ">
+      <h1 style="color: #ccbdcc;">Get in Touch
+</h1>
+  
+      <p class="contact-description " style="color: #9d7e9d;">
+        Feel free to drop us a line to contact us
+        
+      </p>
+    </div>
+
+    <div class="row">
+
+        <div class="col-6" style="margin-left: 100px;">
+               <h2 style="margin-left: 100px; margin-top:140px;"> Feel Free To Contact</h2> 
+<p style="margin-left: 100px; color: #1C0522; font-size: 16px;"; > Hello Everyone! Have a great day :) I am here to help 
+<br>  you. If you want to know something or you have any
+<br> suggestion then please mail me. Thank You.</p> </div>
+
+<br><br>
+<div style="margin-left: 200px; margin-top:20px; color: #1C0522;">
+       <div>    
+        <p><h4>Location:</h4></p>
+        <p>Mumbai, 440070 </p><br>
+      </div>
+
+      <div class="email">
+        
+        <h4>Email:</h4>
+        </p><a href="devika.diyora.2021@atlasskilltech.university" style="color: #1C0522">Send email <br></a>
+      <br></div>
+
+      <div class="phone">
+        <p><h4>Phone No.:</h4></p>
+        <p> +91 8799400922</p>
+      </div>
+        </div>
+
+        <div class="col-6">
+    <form name="contact-form" style="margin-top:-470px ; margin-left: 850px;">
+      <div class="form-control">
+        <label>Full Name</label>
+        <input name="name"
+          placeholder="First and Last Name" />
+        <div class="error hide">Name is required</div>
+      </div>
+
+      <div class="form-control">
+        <label>Email</label>
+        <input
+          name="email"
+          placeholder="e.g. your_email@example.com"
+        />
+        <div class="error hide">Email is invalid</div>
+      </div>
+
+      <div class="form-control">
+        <label>Phone</label>
+        <input name="phone"
+        ></input>
+        <div class="error hide">Phone is invalid</div>
+      </div>
+
+      <div class="form-control">
+        <label>Message</label>
+        <textarea name="message"></textarea>
+        <div class="error hide">Message is required</div>
+      </div>
+
+     
+
+      <button type="submit">SUBMIT FORM</button>
+    </form></div></div>
+
+    <script >const form = document.querySelector("form[name='contact-form']");
+        const nameInput = document.querySelector("input[name='name']");
+        const emailInput = document.querySelector("input[name='email']");
+        const phoneInput = document.querySelector("input[name='phone']");
+        const messageInput = document.querySelector("textarea[name='message']");
+        
+        nameInput.isValid = () => !!nameInput.value;
+        emailInput.isValid = () => isValidEmail(emailInput.value);
+        phoneInput.isValid = () => isValidPhone(phoneInput.value);
+        messageInput.isValid = () => !!messageInput.value;
+        
+        const inputFields = [nameInput, emailInput, phoneInput, messageInput];
+        
+        const isValidEmail = (email) => {
+          const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(String(email).toLowerCase());
+        };
+        
+        const isValidPhone = (phone) => {
+          const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+          return re.test(String(phone).toLowerCase());
+        };
+        
+        let shouldValidate = false;
+        let isFormValid = false;
+        
+        const validateInputs = () => {
+          console.log("we are here");
+          if (!shouldValidate) return;
+        
+          isFormValid = true;
+          inputFields.forEach((input) => {
+            input.classList.remove("invalid");
+            input.nextElementSibling.classList.add("hide");
+        
+            if (!input.isValid()) {
+              input.classList.add("invalid");
+              isFormValid = false;
+              input.nextElementSibling.classList.remove("hide");
+            }
+          });
+        };
+        
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          shouldValidate = true;
+          validateInputs();
+          if (isFormValid) {
+            // TODO: DO AJAX REQUEST
+          }
+        });
+        
+        inputFields.forEach((input) => input.addEventListener("input", validateInputs));
+        </script>
+  </body>
+</html>
+

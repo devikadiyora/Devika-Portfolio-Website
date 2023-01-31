@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Parallax Scrolling - Vainilla JS</title>
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style> 
+        .bgcolor{
+        background: linear-gradient(0deg, rgba(207,224,255,1) 0%, rgb(28, 5, 34) 100%);
+    }
+
+    .column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+ canvas{
+  margin-top: 50px;
+  margin-left: 450px;
+  padding: 0;
+}
+
+    </style>
+  
+
+
+</head>
+
+<body class="bgcolor">
+
+    <header id="header">
+        <div class="row  margin1 zoom text" style="font-size:2vw ;"> DEVIKA DIYORA</div>
+        <div class="menu"></div>
+        <nav>
+            <ul class="menulist">
+                <li><a href="/index.html" >HOME</a></li>
+                <li><a href="/html/gallery.html">GALLERY</a></li>
+                <li><a href="/html/game.html" class="active">GAMES</a></li>
+                <li><a href="/html/blog.html" >BLOG</a></li>
+                <li><a href="/html/contactme.html">CONTACT ME</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div style="text-align: center; margin-top: 140px; color: white;">
+        <h1 >Rock, Paper, Scissors Game</h1> <br>
+        
+    </div>
+
+    
+   
+        
+
+
+    <script style=" margin-left: 200px;">
+
+let btnRock, btnPaper, btnScissors, btnGame, btn3Game, btn5Game,btnPlayagain, btnExit, text1 ;
+
+let RndNumber ;
+
+// variable for text
+let notes = "Welcome to My game , Choose  your option."
+let result = ""
+
+function setup()
+{
+  createCanvas(600, 600);
+ textSize(20);
+  RndNumber = round ( random( 0.5, 3.5) )
+ 
+  btnGame = createButton("Single Game")
+  btnGame.position (520, 530)
+  btnGame.style("width" , "100px")
+  btnGame.mousePressed(showRPS)
+  //btnGame.hide()
+   
+  btn3Game = createButton("Best Of Three")
+  btn3Game.position (665, 530)
+  btn3Game.style("width" , "100px")
+  //btn3Game.hide()
+ 
+  btn5Game = createButton("Best of Five")
+  btn5Game.position (810, 530)
+  btn5Game.style("width" , "100px")
+  //btn5Game.hide()
+ 
+  btnRock = createButton("Rock")
+  btnRock.position (520, 530)
+  btnRock.style("width" , "100px")
+  btnRock.mousePressed(CompRock)
+  btnRock.hide()
+   
+  btnPaper = createButton("Paper")
+  btnPaper.position (665, 530)
+  btnPaper.style("width" , "100px")
+  btnPaper.mousePressed(CompPaper)
+  btnPaper.hide()
+ 
+  btnScissors = createButton("Scissors")
+  btnScissors.position (810, 530)
+  btnScissors.style("width" , "100px")
+  btnScissors.mousePressed(CompScissors)
+  btnScissors.hide()
+ 
+  btnPlayagain = createButton("Play Again")
+  btnPlayagain.position (750, 530)
+  btnPlayagain.style("width" , "100px")
+  btnPlayagain.mousePressed(showRPS)
+  btnPlayagain.hide()
+  
+  btnExit = createButton("Exit")
+  btnExit.position (600, 530)
+  btnExit.style("width" , "100px")
+  btnExit.mousePressed(  )
+  btnExit.hide()
+}
+
+function draw()
+{
+ 
+  background(220);
+  background(0,128,128);
+ 
+ // text("My Game Rock Paper Scissors", 150, 170)
+ 
+  text ( notes, 120, 200);
+ 
+  text (result , 250, 390);
+ 
+  text (RndNumber , 300, 300)
+}
+
+
+function showRPS()
+{
+  notes = "Choose one out of Rock, Paper, Scissors"
+  btnGame.hide()
+  btn3Game.hide()
+  btn5Game.hide()
+  
+  btnScissors.show()
+  btnPaper.show()
+  btnRock.show()
+  
+  btnPlayagian.hide()
+   btnExit.hide()
+  
+ 
+  
+}
+
+function CompRock()
+{
+
+   if(RndNumber==2)
+         {
+        result = 'You Won !!'
+          }    
+      else if (RndNumber == 3)
+         {
+            result = 'Computer Won !!'
+          }  
+      else  
+         {
+            result = "It's Tie"
+          } 
+  
+    hideRPS();
+}  
+  
+
+function CompPaper()
+{
+  if(RndNumber==1)
+         {
+        result = 'You Won !!'
+          }    
+      else if (RndNumber == 3)
+         {
+            result = 'Computer Won !!'
+          }  
+      else  
+         {
+            result = "It's Tie"
+           }
+  
+    hideRPS();
+  
+} 
+  
+function CompScissors()
+{
+    if(RndNumber==1)
+         {
+        result = 'You Won !!'
+          }    
+      else if (RndNumber == 2)
+         {
+            result = 'Computer Won !!'
+          }  
+      else  
+         {
+            result = "It's Tie"
+           }
+    hideRPS();
+} 
+
+
+function hideRPS()
+{
+  btnPaper.hide()
+  btnRock.hide()
+  btnScissors.hide()
+ 
+  notes = ""
+ 
+  btnExit.show()
+  btnPlayagain.show()
+ 
+ 
+}
+
+
+
+
+
+
+            </script> 
+</body>
+</html>

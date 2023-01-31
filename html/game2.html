@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Parallax Scrolling - Vainilla JS</title>
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style> 
+        .bgcolor{
+        background: linear-gradient(0deg, rgba(207,224,255,1) 0%, rgb(28, 5, 34) 100%);
+    }
+
+    .column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+ canvas{
+  margin-top: 50px;
+  margin-left: 460px;
+  padding: 0;
+}
+
+    </style>
+  
+
+
+</head>
+
+<body class="bgcolor">
+
+    <header id="header">
+        <div class="row  margin1 zoom text" style="font-size:2vw ;"> DEVIKA DIYORA</div>
+        <div class="menu"></div>
+        <nav>
+            <ul class="menulist">
+                <li><a href="/index.html" >HOME</a></li>
+                <li><a href="/html/gallery.html">GALLERY</a></li>
+                <li><a href="/html/game.html" class="active">GAMES</a></li>
+                <li><a href="/html/blog.html" >BLOG</a></li>
+                <li><a href="/html/contactme.html">CONTACT ME</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div style="text-align: center; margin-top: 140px; color: white;">
+        <h1 >Game 2</h1> <br>
+        Animation of House!!
+    </div>
+
+    
+   
+        
+
+
+    <script style=" margin-left: 200px;">
+
+function setup() {
+  createCanvas(500, 500);
+}
+
+
+ 
+
+
+  function draw(){
+  background(220);
+  fill("red");
+  triangle(250,50+(frameCount/10),125,200+(frameCount/10),375,200+(frameCount/10)) ;
+  fill("teal");
+  rect(125,200+(frameCount/10),250,250+(frameCount/10));
+  fill("yellow");
+  rect(205,250+(frameCount/10),90,200+(frameCount/10));
+  fill("purple");
+  rect(140,270+(frameCount/10),50,50+(frameCount/10));
+  fill("purple");
+  rect(310,270+(frameCount/10),50,50+(frameCount/10));
+  line(150,320+(frameCount/10),150,270+(frameCount/10));
+ line(160,320+(frameCount/10),160,270+(frameCount/10));
+     line(170,320+(frameCount/10),170,270+(frameCount/10));
+     line(180,320+(frameCount/10),180,270+(frameCount/10));
+     line(190,320+(frameCount/10),190,270+(frameCount/10));
+    line(320,320+(frameCount/10),320,270+(frameCount/10));
+    line(330,320+(frameCount/10),330,270+(frameCount/10));
+    line(340,320+(frameCount/10),340,270+(frameCount/10));
+    line(350,320+(frameCount/10),350,270+(frameCount/10));
+    circle(220,350+(frameCount/10),5)
+    
+  }
+
+
+
+        
+        const navigation = document.querySelector('nav')
+        document.querySelector('.menu').onclick = function (){
+            this.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+
+
+       
+            </script> 
+</body>
+</html>
